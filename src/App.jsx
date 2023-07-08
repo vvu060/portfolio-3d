@@ -8,9 +8,6 @@ import {
   Works,
   Feedbacks,
   Contact,
-  EarthCanvas,
-  BallCanvas,
-  ComputersCanvas,
   StarsCanvas,
 } from './components';
 import './App.css';
