@@ -16,7 +16,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}
-        className='mt-4 text-secondary text-lg max-w-3xl leading-[30px]'
+        className='mt-4 mx-auto text-secondary text-lg max-w-3xl leading-[30px]'
       >
         I'm a skilled software developer with experience in TypeScript and
         JavaScript, and expertise in frameworks like React, Node.js, and
@@ -47,7 +47,7 @@ const ServiceCard = ({ title, index, icon }) => {
             scale: 1,
             speed: 450,
           }}
-          className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex flex-col justify-evenly'
+          className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex flex-col justify-evenly items-center'
         >
           <img src={icon} alt={title} className='w-16 h-16 object-contain' />
           <h3 className='text-white text-xl font-bold text-center'>{title}</h3>
