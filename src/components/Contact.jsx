@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import toast, { Toaster } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
 
 import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
-import { f } from 'maath/dist/index-43782085.esm';
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -16,6 +16,7 @@ const Contact = () => {
     message: '',
   });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,6 +29,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!form.name || !form.email || !form.message) {
+      setError(true);
+      return;
+    }
+
     setLoading(true);
     emailjs
       .send(
@@ -45,7 +52,8 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert('Thank you. I will get back to you soon.');
+          setError(false);
+          toast.success('Thank you. Will get back soon.');
 
           setForm({
             name: '',
@@ -56,13 +64,35 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.log(error);
-          alert('Something went wrong. Please try again.');
+          setError(false);
+          toast.error('Something went wrong. Please try again.');
         }
       );
   };
 
   return (
     <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
+      <Toaster
+        position='bottom-center'
+        toastOptions={{
+          // Define default options
+          className: '',
+          duration: 3000,
+          style: {
+            background: '#151030',
+            color: '#fff',
+          },
+
+          // Default options for specific types
+          success: {
+            duration: 3000,
+            theme: {
+              primary: 'green',
+              secondary: 'black',
+            },
+          },
+        }}
+      />
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
@@ -88,6 +118,11 @@ const Contact = () => {
               placeholder="What's your name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
+            {error && !form.name && (
+              <p className='text-red-600 text-sm font-medium mt-2'>
+                Please enter your name
+              </p>
+            )}
           </label>
 
           <label htmlFor='' className='flex flex-col'>
@@ -102,6 +137,11 @@ const Contact = () => {
               placeholder="What's your email?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
+            {error && !form.email && (
+              <p className='text-red-600 text-sm font-medium mt-2'>
+                Please enter your email
+              </p>
+            )}
           </label>
 
           <label htmlFor='' className='flex flex-col'>
@@ -116,6 +156,11 @@ const Contact = () => {
               placeholder='What do you want to say?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
+            {error && !form.message && (
+              <p className='text-red-600 text-sm font-medium mt-2'>
+                Please enter your message
+              </p>
+            )}
           </label>
 
           <button
