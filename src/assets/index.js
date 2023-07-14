@@ -7,6 +7,7 @@ import github from './github.png';
 import menu from './menu.svg';
 import close from './close.svg';
 import link from './link.png';
+import eye from './eye.png';
 
 import css from './tech/css.png';
 import docker from './tech/docker.png';
@@ -71,4 +72,5 @@ export {
   accenture,
   link,
   metaversus,
+  eye,
 };
