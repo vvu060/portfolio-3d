@@ -34,6 +34,8 @@ import tesla from './company/tesla.png';
 
 import carrent from './carrent.png';
 import metaversus from './metaversus.gif';
+import liva from './liva.gif';
+import nike from './nike.gif';
 import jobit from './jobit.png';
 import tripguide from './tripguide.png';
 
@@ -73,4 +75,6 @@ export {
   link,
   metaversus,
   eye,
+  liva,
+  nike,
 };

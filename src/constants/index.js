@@ -28,6 +28,8 @@ import {
   terralogic,
   accenture,
   metaversus,
+  liva,
+  nike,
 } from '../assets';
 
 export const navLinks = [
@@ -127,10 +129,10 @@ const experiences = [
     iconBg: '#383E56',
     date: 'January 2022 - Present',
     points: [
-      'Crafted 25+ scalable components for a leading OTT platform using Storybook, TypeScript, and unit/functional testing.',
-      'Integrated user onboarding flow for LR devices with widget architecture and Next JS.',
-      'Merged 100+ pull requests on GitHub and resolved 50+ Jira issues.',
-      'Assisted in implementing template Redux for internal application "CREW."',
+      'Engineered 25+ scalable components for a leading OTT platform, utilizing Storybook, TypeScript, and rigorous testing.',
+      'Integrated LR device onboarding with a widget-based architecture in Next JS for an enhanced user flow.',
+      'Merged 100+ pull requests and resolved 50+ Jira issues, showcasing collaborative problem-solving on GitHub.',
+      'Contributed to implementing template Redux for the "CREW" internal application, elevating state management efficiency.',
     ],
   },
   {
@@ -140,10 +142,10 @@ const experiences = [
     iconBg: '#E6DEDD',
     date: 'Dec 2020 - Jan 2022',
     points: [
-      'As a part of API integration team, integrated 60 REST APIs for an E-commerce web application, a Tata Steel Project.',
-      'Implemented redux from scratch by creating 15+ actions & reducers.',
-      "Led the team of 4 members during the manager's absence by interacting with the client and closing 3 major and 5 minor issues.",
-      'Helped the team members in resolving the technical issues related to product listing, POST methods/calls, cart functionality, etc.',
+      "Orchestrated the seamless integration of 60 REST APIs into a Tata Steel Project's E-commerce web application, enhancing its functionality and user experience.",
+      'Built Redux from scratch with 15+ actions & reducers, enhancing state management efficiency',
+      "Led a 4-member team in the manager's absence, resolving 3 major and 5 minor client issues",
+      'Aided team members in tackling technical challenges, including product listing, POST methods, and cart functionality.',
     ],
   },
   {
@@ -212,46 +214,48 @@ const projects = [
     live_link: 'https://metaversus-black-eight.vercel.app/',
   },
   {
-    name: 'Job IT',
+    name: 'Nike',
     description:
-      'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
+      'Discover the world of Nike on our captivating landing page, showcasing the latest in sportswear innovation and iconic classics, all designed to elevate your athletic journey.',
     tags: [
       {
         name: 'react',
         color: 'blue-text-gradient',
       },
       {
-        name: 'restapi',
+        name: 'vite',
         color: 'green-text-gradient',
       },
       {
-        name: 'scss',
+        name: 'tailwindcss',
         color: 'pink-text-gradient',
       },
     ],
-    image: jobit,
-    source_code_link: 'https://github.com/',
+    image: nike,
+    source_code_link: 'https://github.com/vvu060/nike-landing-page',
+    live_link: 'https://nike-landing-page-hoz729sy5-vvu060.vercel.app/',
   },
   {
-    name: 'Trip Guide',
+    name: 'Liva',
     description:
-      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+      'This is an E-Commerce web application where farmers, agriculture land owners and farming enthusiasts can buy agriculture products such as seeds, pesticides and machinery online.',
     tags: [
       {
-        name: 'nextjs',
+        name: 'reactjs',
         color: 'blue-text-gradient',
       },
       {
-        name: 'supabase',
+        name: 'commercejs',
         color: 'green-text-gradient',
       },
       {
-        name: 'css',
+        name: 'firebase',
         color: 'pink-text-gradient',
       },
     ],
-    image: tripguide,
-    source_code_link: 'https://github.com/',
+    image: liva,
+    source_code_link: 'https://github.com/pesto-students/N3-Liva-Beta1',
+    live_link: 'https://liva-3ec01.web.app/',
   },
 ];
 
